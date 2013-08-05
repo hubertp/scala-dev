@@ -190,7 +190,7 @@ trait Typers extends Adaptations with Tags {
          !from.isError
       && !to.isError
       && context.implicitsEnabled
-      && (inferView(EmptyTree, from, to, reportAmbiguous = false) != EmptyTree)
+      && (inferView(EmptyTree, from, to, reportAmbiguous = false, saveErrors = false) != EmptyTree)
     )
 
     def inferView(tree: Tree, from: Type, to: Type, reportAmbiguous: Boolean): Tree =
